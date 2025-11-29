@@ -1,9 +1,15 @@
-export default function App(){
+import { Routes, Route, Navigate } from 'react-router-dom'
+import Home from './Home.jsx'
+import Login from './Login.jsx'
+import Dashboard from './Dashboard.jsx'
+
+export default function App() {
   return (
-    <div style={{padding:40,fontFamily:'Arial',color:'#e5e7eb'}}>
-      <h1>✅ TaskGenie-AI LIVE</h1>
-      <p>Your deployment worked correctly.</p>
-      <pre>Admin login: wills200 / Morgan12</pre>
-    </div>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/dashboard" element={<Dashboard />} />
+      <Route path="*" element={<Navigate to="/" />} />
+    </Routes>
   )
 }
